@@ -5,6 +5,12 @@ body {
 	font-size: 18px;
 	background-color: rgb(0, 0, 85);
 	color: #fff;
+	width: 100%;
+	background-image: url("../images/background.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+    background-position: center; 
+	background-size: cover;
 }
 
 a.skip {
@@ -20,16 +26,24 @@ a.skip {
 	color: rgb(255, 255, 255);
 }
 
+a.skip:focus{
+    top:20px;
+    color: black;
+    text-decoration-style: solid;
+}
+
 header {
     display: flex;
     flex-direction: row;
     align-items: center;
 	justify-content: space-around;
 	padding-bottom: 5px;
+	background-color: white;
 }
 
 #logo {
-	width: 120px;
+	width: 45%;
+	max-width: 480px;
 	background-color: white;
 }
 
@@ -45,11 +59,11 @@ h1 {
 	text-align: center;
 	color:white;
 	padding: 100px 0;
-	background-image: url("../images/background.png");
+	/*background-image: url("../images/background.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed; 
     background-position: center; 
-	background-size: cover;
+	background-size: cover;*/
 }
 
 h2 {
@@ -70,7 +84,7 @@ nav>a:visited {
 /* challenge part */
 nav li {
 	display: inline-block;
-	padding: 15px 25px;
+	padding: 15px 20px;
 	font-size: 24px;
 	cursor: pointer;
 	text-align: center;
@@ -104,21 +118,29 @@ nav li:active {
 
 main p {
 	font-family: Arial, Helvetica, sans-serif;
-
 }
 
 img {
 	width: 325px;    
 	border-radius: 10px;
 	padding: 2px;
-    /*margin: 25px 25px;*/
 }
 
-#main {
+.home #main {
 	padding: 5px 10px;
-	/*background-color: sandybrown;*/
 	background-color: pink;
 	color: black;
+}
+
+.chinese #main,
+.world #main,
+.contact #main {
+	font-size: 24px;
+	background-color: darkslateblue;
+	margin: 0px 10% 5px 10%;
+	padding: 10px;
+	border: 3px dashed darkgray;
+	text-align: center;
 }
 
 #main p:nth-child(2) {
@@ -155,21 +177,6 @@ img {
   	margin-left: auto;
   	margin-right: auto;
 }
-
-/*
-.home img:hover,
-.contact img:hover {
-	border:5px dashed lightpink;
-}
-*/
-
-/*
-.gallery img:hover {
-	width: 375px;
-	margin: 5px -10px 5px 35px;
-	border:5px dashed rgb(255, 166, 0);
-}
-*/
 
 /* grid for chinese.html */
 .chinese .gallery {
@@ -296,7 +303,7 @@ input[type=submit] {
 footer {
     background-color: darkslateblue;
     text-align: center;
-    padding: 15px;
+    padding: 50px;
 	display: grid;
 	grid-template-rows: 2fr 1fr 2fr;
 }
@@ -320,7 +327,7 @@ footer a:visited {
 
 @keyframes logo_animation {
     from {width: 25px; opacity: 0;}
-    to {width: 120px; opacity: 1;}
+    to {width: 45%; opacity: 1;}
 }
 
 #logo {
@@ -332,3 +339,155 @@ footer a:visited {
         animation: none;
     }
 }
+@media screen and (min-width: 768px) {
+	header {
+		flex-direction: column;
+	}
+
+	.nav_links {
+		flex-direction: row;
+	}
+
+	.home #main {
+		display: grid;
+		grid-template-rows: auto auto;
+		grid-template-columns: 1fr 2fr;
+		align-items: center;
+	}
+
+	.home #main h2 {
+		grid-column: 2 / 3;
+		margin: 10px;
+	}
+
+	.home #main img {
+		grid-row: 1 / 3;
+		width: 55%;
+	}
+
+	.home #main p {
+		font-size: 26px;
+		margin: 0px 30px;
+	}
+
+	.home #story p {
+		font-size: 26px;
+		margin: 10px 100px;
+	}
+
+
+	.chinese .gallery {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 2fr;
+		align-items: center;
+	}
+
+	.chinese .gallery:nth-child(2n+1) {
+		justify-items: start;		
+	}
+
+	.chinese .gallery:nth-child(2n) {
+		justify-items: end;		
+	}
+
+	#chengdu h2,
+	#guangzhou h2 {
+		grid-row: 1 / 2;
+		grid-column: 1 / 2;
+	}
+
+	#chengdu p,
+	#guangzhou p {
+		grid-row: 2 / 3;
+		grid-column: 1 / 2;
+		margin-right: 20px;
+	}
+	
+	#chengdu .grid-imgs,
+	#guangzhou .grid-imgs {
+		grid-row: 1 / 3;
+		grid-column: 2 / 3;
+	}
+
+	#xian h2,
+	#suzhou h2 {
+		grid-row: 1 / 2;
+		grid-column: 2 / 3;
+	}
+
+	#xian p,
+	#suzhou p {
+		grid-row: 2 / 3;
+		grid-column: 2 / 3;
+		margin-left: 20px;
+	}
+
+	#xian .grid-imgs,
+	#suzhou .grid-imgs {
+		grid-row: 1 / 3;
+		grid-column: 1 / 2;
+	}
+
+
+	.world .gallery:nth-child(2n+1) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.world .gallery:nth-child(2n) {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-around;
+	}
+
+	.world .gallery:nth-child(2n+1) .flex-small {
+		display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: flex-start;
+	}
+
+	.world .gallery:nth-child(2n) .flex-small {
+		display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: flex-end;
+	}
+
+	#england img {
+		max-width: 80%;
+	}
+}
+/*
+@media screen and (min-width: 1024px) {
+	.home #main {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.home #main h2 {
+		font-size: 50px;
+	}
+	
+	.home #main img {
+		width: 45%;
+	}
+
+	.home #main p,
+	.home #story p {
+		font-size: 26px;
+	}
+
+	.grid-large {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, auto);
+	}
+
+	.flex-large {
+		display: flex;
+
+	}
+
+}*/
