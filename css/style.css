@@ -59,11 +59,6 @@ h1 {
 	text-align: center;
 	color:white;
 	padding: 100px 0;
-	/*background-image: url("../images/background.png");
-	background-repeat: no-repeat;
-	background-attachment: fixed; 
-    background-position: center; 
-	background-size: cover;*/
 }
 
 h2 {
@@ -331,7 +326,7 @@ footer a:visited {
 }
 
 #logo {
-    animation: logo_animation 2s;
+    animation: logo_animation 4s;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -460,8 +455,13 @@ footer a:visited {
 		max-width: 80%;
 	}
 }
-/*
-@media screen and (min-width: 1024px) {
+
+@media screen and (min-width: 1025px) {
+	header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
 	.home #main {
 		grid-template-columns: 1fr 1fr;
 	}
@@ -485,9 +485,118 @@ footer a:visited {
 		grid-template-rows: repeat(2, auto);
 	}
 
-	.flex-large {
-		display: flex;
-
+	#chengdu {
+		grid-row: 1 / 2;
+		grid-column: 1 / 2;
 	}
 
-}*/
+	#xian {
+		grid-row: 1 / 2;
+		grid-column: 2 / 3;
+	}
+
+	#suzhou {
+		grid-row: 2 / 3;
+		grid-column: 1 / 2;
+	}
+
+	#guangzhou {
+		grid-row: 2 / 3;
+		grid-column: 2 / 3;
+	}
+
+	.chinese .gallery:nth-child(2n) {
+		justify-items: start;		
+	}
+
+	#suzhou h2,
+	#xian h2 {
+		grid-row: 1 / 2;
+		grid-column: 1 / 2;
+	}
+
+	#suzhou p,
+	#xian p {
+		grid-row: 2 / 3;
+		grid-column: 1 / 2;
+		margin-left: 0px;
+		margin-right: 20px;
+	}
+	
+	#suzhou .grid-imgs,
+	#xian .grid-imgs {
+		grid-row: 1 / 3;
+		grid-column: 2 / 3;
+	}
+
+	.chinese .gallery p {
+		font-size: 28px;
+	}
+
+
+	#england {
+		border: 2px solid rgb(6, 164, 216);
+		padding: 5px 10px;
+		background-color: rgb(37, 28, 100);
+	}
+
+	#us {
+		border: none;
+		padding: 0;
+		background-color: transparent;
+	}
+
+	.flex-large {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+
+	.world .gallery {
+		flex-basis: 46%;
+		flex-grow: 0;
+		flex-shrink: 0;
+		font-size: 28px;
+	}
+
+	.world .gallery:nth-child(2n) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.world .gallery:nth-child(2n) .flex-small {
+		display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: flex-start;
+	}
+
+	.world .gallery .flex-small {
+		max-width: 45%;
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	.contact-grid img {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+
+	.who {
+		grid-column: 1 / 2;
+		grid-row: 2 / 3;
+		margin: 40px 50px;
+	}
+
+	form {
+		grid-column: 2 / 3;
+		grid-row: span 2;
+	}
+
+}

@@ -37,17 +37,16 @@
         <main class="contact">
             <h1>Contact Me</h1>
             <p id="main">Thanks for visiting my food blog!</p>
-            <img src="images/graduation.jpg" alt="Me at commencement" width="200"/>
-            
-            <div class="who">
-                <h2>Who am I</h2>
-                <p>food lover</p>
-                <p>travel enthusiast</p>
-                <p>data scientist</p>
-                <p>and more ...</p>
-            </div>
-
-            <form action="https://formspree.io/f/mpzbldka" method="POST">
+            <div class="contact-grid">
+                <img src="images/graduation.jpg" alt="Me at commencement" width="200"/>
+                <div class="who">
+                    <h2>Who am I</h2>
+                    <p>food lover</p>
+                    <p>travel enthusiast</p>
+                    <p>data scientist</p>
+                    <p>and more ...</p>
+                </div>
+                <form action="https://formspree.io/f/mpzbldka" method="POST">
                 <fieldset>
                     <label for="fname">First Name</label>
                     <input type="text" id="fname" name="firstname" placeholder="Your first name" required>
@@ -59,7 +58,8 @@
                     <textarea id="message" name="message" placeholder="Leave me a message..." required></textarea>
                     <input type="submit" value="Submit">
                 </fieldset>
-            </form>
+                </form>
+            </div>
             
             <div id="ending">
                 <p>
