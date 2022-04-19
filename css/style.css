@@ -57,7 +57,7 @@ h1 {
 	font-size: 48px; 
 	font-weight: bold;
 	text-align: center;
-	color:white;
+	color: white;
 	padding: 50px 0;
 	margin: 5px;
 	border: dotted 5px yellow;
@@ -372,10 +372,14 @@ footer a:visited {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-    * {
+    #logo {
         animation: none;
-		transform: none;
     }
+
+	.flip-card:hover .flip-card-inner,
+	.flip-card:focus .flip-card-inner  {
+		transform: none;
+	}
 }
 
 /* tablet view */
