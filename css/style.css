@@ -380,6 +380,10 @@ footer a:visited {
 	.flip-card:focus .flip-card-inner  {
 		transform: none;
 	}
+
+	body {
+		background-attachment: scroll;
+	}
 }
 
 /* tablet view */
