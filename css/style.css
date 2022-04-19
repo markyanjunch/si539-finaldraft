@@ -58,7 +58,9 @@ h1 {
 	font-weight: bold;
 	text-align: center;
 	color:white;
-	padding: 100px 0;
+	padding: 50px 0;
+	margin: 5px;
+	border: dotted 5px yellow;
 }
 
 h2 {
@@ -320,6 +322,46 @@ footer a:visited {
 	color: white;
 }
 
+/* flip card style */
+.flip-card {
+	cursor: pointer;
+	perspective: 1000px;
+	min-height: 310px;
+	width: 100%;
+}
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+	width: 100%;
+	position: absolute;
+	-webkit-backface-visibility: hidden; /* Safari */
+	backface-visibility: hidden;
+}
+
+.flip-card-back {
+	transform: rotateY(180deg);
+}
+
+.flip-card-back h1 {
+	color:yellow;
+	border: none;
+}
+
+/* animation */
 @keyframes logo_animation {
     from {width: 25px; opacity: 0;}
     to {width: 45%; opacity: 1;}
@@ -332,8 +374,11 @@ footer a:visited {
 @media screen and (prefers-reduced-motion: reduce) {
     * {
         animation: none;
+		transform: none;
     }
 }
+
+/* tablet view */
 @media screen and (min-width: 768px) {
 	header {
 		flex-direction: column;
@@ -370,6 +415,9 @@ footer a:visited {
 		margin: 10px 100px;
 	}
 
+	.flip-card {
+		min-height: 220px;
+	}
 
 	.chinese .gallery {
 		display: grid;
@@ -456,6 +504,7 @@ footer a:visited {
 	}
 }
 
+/* desktop view */
 @media screen and (min-width: 1025px) {
 	header {
 		flex-direction: row;
@@ -477,6 +526,14 @@ footer a:visited {
 	.home #main p,
 	.home #story p {
 		font-size: 26px;
+	}
+
+	h1 {
+		font-size: 36px;
+	}
+
+	.flip-card {
+		min-height: 160px;
 	}
 
 	.grid-large {
